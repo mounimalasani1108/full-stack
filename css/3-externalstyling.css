@@ -1,0 +1,32 @@
+/* css selectors */
+div{
+    background-color:lightcyan;
+}
+h1{
+    font-size: 50px;
+}
+h2{
+    font-size: 30px;
+}
+p{
+    font-size: 20px;
+}
+
+/* class selector */
+.unique-style{
+    background-color: lightsalmon;
+    color: azure;
+}
+.box-look{
+    color:black
+}
+
+/* id selector */
+#section-1{
+    font-style: italic;
+    color:#d9e718;
+}
+/* universal selector */
+*{
+    text-align: center;
+}

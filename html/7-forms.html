@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form method="">
+        <h1>Form</h1>
+    <!-- <input action=""> -->
+        Name:<input type="text" name="Name" placeholder="enter your full name here" required/><br/><br/>
+        Email:<input type="email" name="email" placeholder="enter your email" value="malasani@gmail.com"/><br/><br/>
+        Phone number:<input type="number" name="phone" maxlength="10" placeholder="mobile number"/><br/><br/>
+        Password:<input type="password" name="password" required/><br/><br/>
+        Graduation date:<input type="date" name="graduation-date"/>
+        Meeting time:<input type="time" name="meeting-time"/><br/><br/>
+        Select all of your hobbies from below:<br/><br/>
+        <input type="checkbox" name="hobbies" value="dancing">swimming</input><br/><br/>
+        <input type="checkbox" name="hobbies" value="dancing">dancing</input><br/><br/>
+        <input type="checkbox" name="hobbies" value="cooking">cooking</input><br/><br/>
+        Upload your Resume
+        <input type="file" name="resume" required/><br/><br/>
+        How much do you rate yourself in html?
+        <input type="range" name="rating" min="0" max="100" step="10"/><br/><br/>
+        Select your birth year:
+        <select name="birth-year">
+          <option value="">choose year</option>
+          <option value="1998">1998</option>
+          <option value="1999">1999</option>
+          <option value="2000">2000</option>
+          <option value="2001">2001</option>
+        </select><br/><br/>
+        Are you married?
+        <input type="radio" value="true">Yes</input>
+        <input type="radio" value="False">No</input><br/><br/>
+        Any comments?<textarea name="text" id="description" rows="10"></textarea><br/><br/>
+        <button type="submit">Submit</button>
+        <button type="reset" disabled>Reset</button>
+    </form>
+</body>
+</html>

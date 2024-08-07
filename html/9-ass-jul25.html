@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jul 25 assignment</title>
+</head>
+<body>
+    <h2>1. Registration form</h2>
+    <form>
+        Name:<input type="text" name="name"/><br/><br/>
+        Email:<input tye="email" name="email" required/><br/><br/>
+        Password:<input type="password" name="password" required maxlength="20"/><br/><br/>
+        Confirm password:<input type="password" name="confirm password" required maxlength="20"/><br/><br/>
+        Date of birth:
+        <input type="date" name="birth-date" required min="2006-07-28"/><br/><br/>
+        Gender:
+        <select>
+            <option value="">select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br/><br/>
+        Subscriptions:<br/><br/>
+        <input type="radio" value="free">Free</input>
+        <input type="radio" value="basic">Basic</input>
+        <input type="radio" value="premium">Premium</input><br/><br/>
+        Hobbies:<br/><br/>
+        <input type="checkbox" name="hobbies" value="swimming">Swimming</input><br/><br/>
+        <input type="checkbox" name="hobbies" value="dancing">dancing</input><br/><br/>
+        <input type="checkbox" name="hobbies" value="reading">reading</input><br/><br/>
+        <input type="checkbox" name="hobbies" value="playing">playing</input><br/><br/>
+        Upload profile picture:<br/><br/>
+        <input type="file" name="profile-pic" accept=".jpg,.png" required/><br/><br/>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>2. Detailed feedback form</h2><br/><br/>
+    <form>
+        Name:<input type="text" name="name"/><br/><br/>
+        Email:<input tye="email" name="email" required/><br/><br/>
+        Comments:<br/><br/>
+        <input type="textarea" placeholder="Enter your feedback here"/><br/><br/>
+        Rate our service:
+        <input type="range" min="0" max="100" list="values" step="20"/><br/><br/>
+        <datalist id="values">
+            <option value="0" label="0"></option>
+            <option value="20" label="20"></option>
+            <option value="40" label="40"></option>
+            <option value="60" label="60"></option>
+            <option value="80" label="80"></option>
+            <option value="100" label="100"></option>
+        </datalist>
+        Feedback type:<br/><br/>
+        <input type="radio" value="compliment">compliment</input><br/><br/>
+        <input type="radio" value="complaint">complaint</input><br/><br/>
+        <input type="radio" value="suggestion">suggestion</input><br/><br/>
+        <input type="checkbox" value="agreeing" name="agreeing" required>I am agreeing the feedback policy</input><br/><br/>
+        <a href="#feedback-policy">Feedback-policy</a><br/><br/>
+        <button type="submit">Submit</button><br/><br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <div id="feedback-policy">
+            <h4><u>Our feedback policy section:</u></h4>
+            <p><i>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime eum hic nemo tenetur similique ab quisquam eligendi necessitatibus, libero temporibus nam fugit sit! Laudantium, ducimus deleniti dolorem quos nam accusantium.
+                Ut enim dolores rem aperiam necessitatibus architecto fuga atque accusamus, consequatur, illo voluptates expedita similique natus porro reiciendis autem et libero totam. Omnis quisquam ipsum cupiditate repellendus, suscipit illum itaque!
+                Sapiente vero quisquam, distinctio iure impedit mollitia ipsam modi id commodi consequuntur quod, sit cumque ab quos placeat suscipit culpa. Totam nemo asperiores fugit perspiciatis placeat aliquam quaerat quidem atque!</i></p>
+        </div>
+    </form>
+    <h3>3.Product Order Form with Advanced Attributes</h3>
+    <form>
+        Name:<input type="text" name="name"/><br/><br/>
+        Email:<input tye="email" name="email"/><br/><br/>
+        Select a product category:
+        <select>
+            <option value="">select category</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Books">Books</option>
+            <option value="Clothing">Clothing</option>
+        </select><br/><br/>
+        Quantity:<input type="number" min="1" max="10"/><br/><br/>
+        Preferred date and time for delivery:<br/><br/>
+        Date:<input type="date" min="2024-07-28"/>
+        Time:<input type="time"/><br/><br/>
+        Additional notes:<br/><br/>
+        <input type="textarea"><br/><br/>
+        Payment options:<br/><br/>
+        <input type="checkbox" value="creditcard">Credit card</input>
+        <input type="checkbox" value="paypal">Paypal</input>
+        <input type="checkbox" value="bank-transfer">Bank transfer</input>
+    </form>
+</body>
+</html>
