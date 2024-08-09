@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #navbar{
+            height:100px;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            border: 1px solid black;
+            align-items: center;
+            background-color: black;
+        }
+        #links{
+            display: flex;
+            width: 40%;
+            justify-content: space-evenly;
+            color:white;
+        }
+        #links>p:hover{
+            color:red;
+            cursor: pointer;
+            border:1px solid white;
+            padding: 3px;
+        }
+        #navbar>img{
+            padding-left: 50px;
+        }
+        #navbar+h1{
+            text-align: center;
+            border: 1px solid black;
+            margin-top: 50px;
+            text-transform: uppercase;
+            color: blue;
+        }
+        #gallery{
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: space-around;
+            gap:40px;
+            width: 80%;
+            margin-top: 50px;
+            margin: auto;
+        }
+        #gallery>img{
+            height: 300px;
+            width: 40%;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <img style="height: 50px;" src="https://static.vecteezy.com/system/resources/thumbnails/000/135/493/small/cat-animal-life-pop-art-portrait.jpg" alt="">
+        <div id="links">
+            <p>Home</p>
+            <p>Gallery</p>
+            <p>About</p>
+        </div>
+    </div>
+    <h1>Photo Gallery</h1>
+    <section id="gallery">
+        <img src="https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?cs=srgb&dl=daylight-forest-glossy-443446.jpg&fm=jpg" alt="">
+        <img src="https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?cs=srgb&dl=daylight-forest-glossy-443446.jpg&fm=jpg" alt="">
+        <img src="https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?cs=srgb&dl=daylight-forest-glossy-443446.jpg&fm=jpg" alt="">
+        <img src="https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?cs=srgb&dl=daylight-forest-glossy-443446.jpg&fm=jpg" alt="">
+        <img src="https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?cs=srgb&dl=daylight-forest-glossy-443446.jpg&fm=jpg" alt="">
+    </section>
+</body>
+</html>

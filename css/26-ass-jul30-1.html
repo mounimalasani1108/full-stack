@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+           margin: 0;
+           padding: 0;
+           background-color: aliceblue;
+        }
+        #navbar{
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px solid black; */
+        }
+        .head{
+            color:white;
+            background-color: #ef4ed7;
+            max-width: 100px;
+            text-align: center;
+            margin-left: 50px;
+            padding: 5px 10px 5px 10px;
+        }
+        .links{
+            display: flex;
+            width:50%;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .main{
+            /* background-color: white; */
+            display: flex;
+            margin: 10px;
+        }
+        .first-half{
+            background-color: white;
+            margin-top: 5px;
+            padding: 20px;
+        }
+        .first-half>h3{
+            color: blue;
+            width: 55%;
+        }
+        .video{
+            display: flex;
+        }
+        .second-half img{
+            width: 70px;
+            justify-content: space-evenly;
+        }
+        .label{
+            background-color: white;
+            margin: 5px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .row{
+            display: flex;
+        }
+        .second-half{
+            margin-left: 10px;
+        }
+        .video>h3{
+            padding: 30px;
+            max-width: 300px;
+            text-align: center;
+        }
+        .links>p:hover{
+            color: blue;
+            cursor: pointer;
+        }
+        .links>p{
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <h3 class="head">Study Lab</h3>
+        <div class="links">
+            <p>Home</p>
+            <p>About</p>
+            <p>Course</p>
+            <p>Instructor</p>
+            <p>Blog</p>
+            <p>Contact</p>
+        </div>
+    </div>
+    <div class="main">
+        <div class="first-half">
+            <h3>WELCOME TO STUDYLAB</h3>
+            <h1>We are StudyLab An Online Learning Center</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis quos neque quibusdam hic, reiciendis.</p>
+            <p> Numquam quas quisquam nemo. Neque illum placeat nesciunt?
+                Quidem repellat magnam iusto quae ullam nisi ipsam numquam ex. Ipsa fugiat corrupti modi facere. Culpa dolores, deserunt at cum</p>
+            <div class="video">
+                <video src="./big_buck_bunny_720p_1mb.mp4" controls width="200px"></video>
+                <h3>Learn anything from StudyLab, Watch video.</h3>
+            </div>
+        </div>
+        <div class="second-half">
+            <div class="row">
+                 <div class="label">
+                    <img src="https://thumbs.dreamstime.com/b/big-quality-logo-simple-style-big-quality-logo-simple-illustration-big-quality-logo-any-design-orange-123655632.jpg"/>
+                    <h3>Top Quality Content</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vel unde eos</p>            
+                 </div>
+                 <div class="label">
+                    <img src="https://th.bing.com/th/id/R.5efd3aa3bb585e16fbc7598adbaf3a0b?rik=BKR0GsSjqoZRAg&riu=http%3a%2f%2fwww.tribusagile.com%2fwp-content%2fuploads%2f2020%2f06%2fAuthorized-Instructor-black.png&ehk=XF%2bUZlKnl%2bGnWgK%2bECRnTsr2zq6UZK1ZsGt0UwzaK2w%3d&risl=&pid=ImgRaw&r=0"/>
+                    <h3>Highly skilled instructor</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vel unde eos</p>            
+                 </div>
+            </div>
+            <div class="row">
+                <div class="label">
+                   <img src="https://th.bing.com/th/id/OIP.auNWRRkhABL3sfMfvUYTnwHaHa?rs=1&pid=ImgDetMain"/>
+                   <h3>World class & Quiz</h3>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vel unde eos </p>            
+                </div>
+                <div class="label">
+                   <img src="https://th.bing.com/th/id/OIP.AD3XbFRwe2H0WQ8BUeX3MwHaHZ?rs=1&pid=ImgDetMain"/>
+                   <h3>Get certified</h3>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vel unde eos</p>            
+                </div>
+           </div>
+        </div>
+    </div>
+</body>
+</html>

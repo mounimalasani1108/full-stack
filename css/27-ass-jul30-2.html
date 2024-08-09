@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        .row{
+            display: flex;
+            /* justify-content: space-evenly; */
+        }
+        .label{
+            background-color: white;
+            width:30%;
+            text-align: center;
+            padding: 30px;
+            margin: 30px;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .label>img{
+            width:200px;
+            height:auto;
+        }
+        .main{
+            img+p{
+            color:blue;
+        }
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button{
+            align-items: center;
+            color:red;
+            border-color: red;
+            border-radius: 5px;
+            border:1px solid red;
+            padding: 5px 8px 5px 8px;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .second-half{
+            background-color: white;
+        }
+        .label2>img{
+            width:200px;
+            height:auto;
+        }
+        .label2{
+            border: 1px solid lightgray;
+            padding: 30px 50px 10px 50px;
+            border-radius: 10px;
+        }
+        .row2{
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+        .second-half>h2{
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2 style="text-align: center;font-weight: 600;">Masai in the news</h2>
+        <div class="main">
+            <div class="row">
+                <div class="label">
+                    <img src="https://th.bing.com/th/id/R.0d5db3c37b69b7a4e88c5d2da923f1c1?rik=OyEAQ3llaAPYyg&riu=http%3a%2f%2fwww.pik-potsdam.de%2f%7eanders%2ffigures%2flogo_economic_times.jpg&ehk=DP8h15PMccXFXjsjg0E1s5hYKePuQoqu7IjCijwtnkw%3d&risl=&pid=ImgRaw&r=0"/>
+                    <p>21 Dec 2021</p>  
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus debitis tempore veniam molestias nostrum ne</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus debitis</p>
+                </div>
+                <div class="label">
+                    <img src="https://th.bing.com/th/id/OIP.M7KySDPrUYzt8VzXwnVKxgHaFX?rs=1&pid=ImgDetMain"/>
+                    <p>26 Oct 2021</p>  
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus debitis tempore veniam molestias nostrum ne</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus debitis</p>
+                </div>
+                <div class="label">
+                    <img src="https://alchetron.com/cdn/vccircle-df976bc1-3e2d-4fef-a24a-9fd2531d94d-resize-750.jpeg"/>
+                    <p>18 Aug 2021</p>  
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus debitis tempore veniam molestias nostrum ne</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus debitis</p>
+                </div>
+            </div>
+            <button>SEE MORE ></button>
+        </div>
+        <div class="second-half">
+            <h2>Our Investors, Who Believe in Us</h2>
+            <div class="row2">
+                <div class="label2">
+                    <img src="https://a.mailmunch.co/user_data/landing_pages/1525150142831-Unitus%20FInal%20Logo.png"/>
+                </div>
+                <div class="label2">
+                    <img src="https://th.bing.com/th/id/OIP.3jJnDln344eQq82m432aOQHaE8?rs=1&pid=ImgDetMain"/>
+                </div>
+                <div class="label2">
+                    <img src="https://s3.ap-south-1.amazonaws.com/cdn.flynote.in/vibecity/investors/IQ.jpg"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
