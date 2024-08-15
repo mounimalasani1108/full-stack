@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #container{
+        background-color:aliceblue;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+        gap:20px;
+        grid-template-areas: "b a c"
+        "d e f";
+        }
+        #container>div:nth-child(1){
+          background-color: teal;
+          grid-area: a;
+        }
+        #container>div:nth-child(2){
+            background-color: orange;
+            grid-area: b;
+        }
+        #container>div:nth-child(3){
+          background-color: lightgreen;
+          grid-area: c;
+        }
+        #container>div:nth-child(4){
+            background-color: violet;
+            grid-area: d;
+        }
+        #container>div:nth-child(5){
+          background-color: rgb(179, 58, 125);
+          grid-area: e;
+        }
+        #container>div:nth-child(6){
+            background-color: rgb(232, 240, 81);
+            grid-area: f;
+        }
+        #container>div{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+</html>

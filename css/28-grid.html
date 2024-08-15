@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #container{
+        background-color:aliceblue;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 100px 100px;
+        grid-template-rows: 200px 100px;
+        grid-template-rows: repeat(2,100px);
+        /* grid-row-gap:20px;
+        grid-column-gap:20px; */
+        gap:20px;
+        }
+        #container>div:nth-child(1){
+          background-color: teal;
+        }
+        #container>div:nth-child(2){
+            background-color: orange;
+        }
+        #container>div:nth-child(3){
+          background-color: lightgreen;
+        }
+        #container>div:nth-child(4){
+            background-color: violet;
+        }
+        #container>div{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>
