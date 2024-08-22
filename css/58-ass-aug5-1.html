@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="num1" id="num1" placeholder="enter 1st number" value=""/>
+    <input type="number" name="num2" id="num2" placeholder="enter 2nd number" value=""/>
+    <hr/>
+    <button onclick="addition()">Add</button>
+    <button onclick="subtract()">Subtract</button>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+    <h1 id="out"></h1>
+</body>
+</html>
+<script>
+    function addition(){
+        let resadd=Number(document.getElementById("num1").value)+Number(document.getElementById("num2").value);
+        // document.getElementById("out").innerText=name;
+        alert(resadd);
+    }
+    function subtract(){
+        let ressub=document.getElementById("num1").value-document.getElementById("num2").value;
+        // document.getElementById("out").innerText=gender;
+        alert(ressub);
+    }
+    function multiply(){
+        let resmul=document.getElementById("num1").value*document.getElementById("num2").value;
+        // document.getElementById("out").innerText=name;
+        alert(resmul);
+    }
+    function divide(){
+        let resdiv=document.getElementById("num1").value/document.getElementById("num2").value;
+        // document.getElementById("out").innerText=gender;
+        alert(resdiv);
+    }
+</script>
+
+
+

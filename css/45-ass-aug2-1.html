@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            background-color: yellow;
+            font-size: 30px;
+        }
+        .boxes>div{
+            height: 120px;
+            margin: 5px;
+            padding: 5px;
+        }
+        #box-1{
+            background-color: red;
+        }
+        #box-2{
+            background-color: green;
+        }
+        #box-3{
+            background-color: blue;
+        }
+        #box-4{
+            background-color: gray;
+        }
+        .boxes{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        @media all and (min-width:768px) and (max-width:1024px){
+            .boxes{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+        @media all and (min-width:320px) and (max-width:767px){
+            .boxes{
+                display: grid;
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <p>Navigation</p>
+    <div class="boxes">
+        <div id="box-1">Box-1</div>
+        <div id="box-2">Box-2</div>
+        <div id="box-3">Box-3</div>
+        <div id="box-4">Box-4</div>
+    </div>
+</body>
+</html>

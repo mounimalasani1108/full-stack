@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">This is h1</h1>
+    <p>This is p</p>
+    <div id="Box">FLM Batch-1</div>
+</body>
+</html>
+<script>
+    console.log(document);
+    console.log(document.title);
+    console.log(document.domain);
+    console.log(document.doctype);
+    console.log(document.body);
+    console.log(document.head);
+    console.log(document.all);
+    console.log(document.getElementById("head"));
+    console.log(document.getElementById("head").innerText);
+    document.getElementById("head").innerText="This is new heading";
+    console.log(document.getElementById("head").innerText);
+    let box=document.getElementById("Box");
+    box.innerText="Changed FLM batch text";
+</script>
