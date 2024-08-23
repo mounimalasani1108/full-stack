@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+   let btn1= document.createElement("button");
+   btn1.textContent="primary";
+   btn1.style.backgroundColor="blue";
+   btn1.style.color="white";
+
+   let btn2= document.createElement("button");
+   btn2.textContent="secondary";
+   btn2.style.backgroundColor="grey";
+   btn2.style.color="white";
+
+   let btn3= document.createElement("button");
+   btn3.textContent="success";
+   btn3.style.backgroundColor="green";
+   btn3.style.color="white";
+   document.querySelector("body").append(btn1,btn2,btn3);
+</script>

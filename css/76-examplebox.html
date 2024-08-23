@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
+<script>
+    let parentbox=document.createElement("div");
+    parentbox.setAttribute("id","container");
+    let div1=document.createElement("div");
+    div1.innerText="i am div1";
+    let div2=document.createElement("div");
+    div2.innerText="i am div2";
+    let div3=document.createElement("div");
+    div3.innerText="i am div3";
+    parentbox.append(div1,div2,div3);
+    document.querySelector("body").append(parentbox);
+</script>

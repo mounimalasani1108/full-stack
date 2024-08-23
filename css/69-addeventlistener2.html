@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <p>this is p tag</p>
+</body>
+</html>
+<script>
+    //mouse enter event
+    document.querySelector("div").addEventListener("mouseenter",changebg);
+    function changebg(){
+        document.querySelector("div").style.backgroundColor="red";
+        document.querySelector("div").style.cursor="pointer";
+        console.log("mouse enter");
+    }
+    document.querySelector("div").addEventListener("mouseleave",changetodefault);
+    function changetodefault(){
+        document.querySelector("div").style.backgroundColor="aqua";
+        document.querySelector("div").style.cursor="cursor";
+        console.log("mouse leave");
+    }
+    document.querySelector("p").addEventListener("dblclick", function(){
+        console.log("double clicked me");
+    });
+    document.querySelector("p").addEventListener("click", function(){
+        console.log("clicked me");
+    });
+</script>

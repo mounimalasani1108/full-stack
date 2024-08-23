@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="country-continent">
+        <option value="">Please select</option>
+        <option value="India">India</option>
+        <option value="United states of America">United states of America</option>
+        <option value="China">China</option>
+        <option value="Nepal">Nepal</option>
+        <option value="Australia">Australia</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="South Africa">South Africa</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Canada">Canada</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Sweden">Sweden</option>
+    </select>
+</body>
+</html>
+<script>
+   let btn1= document.createElement("button");
+   btn1.innerText="check continent";
+   document.querySelector("body").append(btn1);
+   btn1.addEventListener("click", showcontinent);
+   function showcontinent(){
+      let selectedcountry=document.querySelector("#country-continent").value;
+      let continent;
+      if(selectedcountry=="India"||selectedcountry=="China"||selectedcountry=="Nepal"||selectedcountry=="Singapore"){
+        continent="Asia";
+      }
+      if(selectedcountry=="United states of America"||selectedcountry=="Mexico"||selectedcountry=="Canada"){
+        continent="North America";
+      }
+      if(selectedcountry=="Argentina"||selectedcountry=="Brazil"){
+        continent="South America";
+      }
+      if(selectedcountry=="Australia"){
+        continent="Australia";
+      }
+      if(selectedcountry=="France"||selectedcountry=="Germany"||selectedcountry=="Sweden"){
+        continent="Europe";
+      }
+      if(selectedcountry=="South Africa"||selectedcountry=="Nigeria"){
+        continent="Africa";
+      }
+      alert("The continent is "+continent);
+   }
+</script>

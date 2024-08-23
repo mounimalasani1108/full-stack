@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="no1" type="number" placeholder="enter no 1" value=""/>
+    <input id="no2" type="number" placeholder="enter no 2" value=""/>
+</body>
+</html>
+<script>
+    let btn1=document.createElement("button");
+    btn1.innerText="Multiply";
+    btn1.addEventListener("click",multiply);
+    document.querySelector("body").append(btn1);
+    function multiply() {
+        let res=document.querySelector("#no1").value*document.querySelector("#no2").value;
+        alert(res);
+    }
+
+    let btn2=document.createElement("button");
+    btn2.innerText="Click here to find the exponent";
+    btn2.addEventListener("click",exponent);
+    document.querySelector("body").append(btn2);
+    let para = document.createElement("p");
+    document.querySelector("body").append(para);
+    function exponent() {
+        let num1=document.querySelector("#no1").value;
+        let num2=document.querySelector("#no2").value;
+        let res1=1;
+        for(let i=1;i<=num2;i++){
+           res1=res1*num1;
+        }
+        document.querySelector("p").innerText=res1;
+    }
+</script>

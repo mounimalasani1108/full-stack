@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    //creating tags, inner text appending
+    let heading=document.createElement("h1");
+    heading.innerText="this is h1";
+
+    let para=document.createElement("p");
+    para.innerText="this is p";
+
+    let box=document.createElement("div");
+    box.innerText="this is div";
+
+    let bdy=document.querySelector("body")
+    bdy.append(heading, para,box);
+</script>
