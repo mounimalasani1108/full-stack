@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- navbar -->
+     <div id="links">
+        <div><a href="./index.html">Home</a></div>
+        <div><a href="./application.html">Applied jobs</a></div>
+        <div><a href="./bookmark.html">Bookmarks</a></div>
+     </div>
+    
+     <!-- form filling -->
+      <form id="form">
+        <h2>enter your details</h2>
+        <input type="text" placeholder="enter name" id="name"/>
+        <input type="email" placeholder="enter mail" id="mail"/>
+        <select id="role">
+            <option value="FSD">FSD</option>
+            <option value="Backend">Backend</option>
+            <option value="Frontend">Frontend</option>
+        </select>
+        <input type="number" id="salary" placeholder="enter expected lpa" value=""/>
+        <input type="submit" id="submit" value="submit"/>
+      </form>
+</body>
+</html>
+<script>
+    document.querySelector("#form").addEventListener("submit",jobsubmit);
+    let jobarr;  // Declare a variable to hold the array of jobs
+
+    // Check if there is an existing job list in localStorage
+    if (localStorage.getItem("joblist") != null) {
+    // If job list exists, parse the JSON string from localStorage and assign it to jobarr
+    jobarr = JSON.parse(localStorage.getItem("joblist"));
+     } else {
+    // If no job list exists in localStorage, initialize jobarr as an empty array
+    jobarr = [];
+    }
+    function jobsubmit(){
+        event.preventDefault();
+        let jobobj={
+           personname:document.querySelector("#name").value,
+           personemail:form.mail.value,
+           personrole:form.role.value,
+           personsalary:form.salary.value
+        };
+       console.log(jobobj);
+       jobarr.push(jobobj);
+// when we want to store the data in local storage, we should always send the data in json format.
+       localStorage.setItem("joblist",JSON.stringify(jobarr));
+    //    sessionStorage.setItem("joblist",JSON.stringify(jobarr));
+
+    window.location.href="application.html";
+    console.log("Job list from localStorage:", localStorage.getItem("joblist"));
+    }
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 200px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+
+    <div id="container">
+        
+    </div>
+</body>
+</html>
+<script>
+    let images=[
+        "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?cs=srgb&dl=daylight-environment-forest-459225.jpg&fm=jpg",
+        "https://www.pixelstalk.net/wp-content/uploads/2016/08/Best-Nature-Full-HD-Images-For-Desktop.jpg",
+        "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?cs=srgb&dl=bloom-blooming-blossom-462118.jpg&fm=jpg",
+        "https://www.pixelstalk.net/wp-content/uploads/2016/07/Background-Beautiful-Nature-Images-HD.jpg",
+        "https://th.bing.com/th/id/OIP.NOH8bBZLrC_5WpwupOJNkwHaEX?rs=1&pid=ImgDetMain",
+        "https://th.bing.com/th/id/R.2436bfd57f8da9d3352be6d9c69f7d0d?rik=9ZCsDkOmNhWhyQ&riu=http%3a%2f%2fwallpaperheart.com%2fwp-content%2fuploads%2f2018%2f04%2fbest-scenery-wallpaper-scenery-images.jpg&ehk=QhEgBXlBIdu4NBBKeTvxOQncAMHrLokkC8ustgaeB9c%3d&risl=&pid=ImgRaw&r=0",
+        "https://wallsdesk.com/wp-content/uploads/2016/05/Waterfalls-Photos.jpg"
+    ];
+
+    let id;
+    let i=0;
+
+    function start(){
+        id = setInterval(function(){
+            let slideimg=document.createElement("img");
+            slideimg.src=images[i++];
+            if(i==images.length){ //updating i as 0 when all the images are completed
+                i=0;
+            }
+            document.querySelector("#container").innerHTML="";
+            document.querySelector("#container").append(slideimg);
+        },2000);
+    }
+
+    function stop(){
+        clearInterval(id);
+    }
+</script>

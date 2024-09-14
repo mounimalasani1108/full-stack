@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    set time out
+</body>
+</html>
+<script>
+    console.log(1);
+
+    setTimeout(function(){
+        console.log(2);
+    },2000); //here first arg is function and 2nd is 2000 milli sec
+    //in this case if we see inspect-> console, 1,3,2 will print. this is because after 2 sec only browser will give result to js.
+    
+    console.log(3);
+</script>

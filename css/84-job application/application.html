@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    this is application page
+    <!-- navbar -->
+    <div id="links">
+        <div><a href="./index.html">Home</a></div>
+        <div><a href="./application.html">Applied jobs</a></div>
+        <div><a href="./bookmark.html">Bookmarks</a></div>
+    </div>
+    <!-- sort by names --> 
+    <select id="sortNames" onchange="handlenameSort()">
+        <option value="">Sort by Names</option>
+        <option value="asc">Ascending</option>
+        <option value="dsc">Descending</option>
+    </select>
+
+    <!-- sort by salary --> 
+    <select id="sortSalary" onchange="handlesalarySort()">
+        <option value="">Sort by Salary</option>
+        <option value="HTL">High to Low</option>
+        <option value="LTH">Low to High</option>
+    </select>
+
+    <!-- filter role -->
+    <select id="filterRole" onchange="handlefilterRole()">
+        <Option value="">Filter by Role</Option>
+        <option value="FSD">FSD</option>
+        <option value="Frontend">Front end</option>
+        <option value="Backend">Back end</option>
+    </select>
+
+    <main>
+        <table border="1px solid black">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>job applied</th>
+                    <th>salary expected</th>
+                    <th>Add to Bookmark</th>
+                </tr>
+            </thead>
+            <tbody>
+               <!-- data will be cmng from js -->
+            </tbody>
+        </table>
+    </main>
+ </body>
+</html>
+
+<script>
+    let jobarr=JSON.parse(localStorage.getItem("joblist"));
+    // console.log(jobarr);
+    displayData(jobarr);
+    let bookmarkarr=JSON.parse(localStorage.getItem("bookmarks"))||[];
+    function bookmarkfunction(element){
+        //check if the job is alredy bookmarked
+        let isAlreadyBookmarked=false;
+        for(let i=0;i<bookmarkarr.length;i++){
+            if(bookmarkarr[i].personemail==element.personemail){
+            isAlreadyBookmarked=true;
+            }
+        }
+        if(isAlreadyBookmarked){
+            alert("This job is already bookmarked");
+        }
+        else{
+            bookmarkarr.push(element);
+            localStorage.setItem("bookmarks",JSON.stringify(bookmarkarr));
+            alert("Bookmarked successfully");
+        }
+    }
+    
+    //logic for filter
+    function handlefilterRole(){
+        let selectedValue=document.getElementById("filterRole").value;
+        let filteredArray=jobarr.filter(function(element){
+            return element.personrole === selectedValue;
+        });
+        console.log(filteredArray);
+        // localStorage.setItem("joblist",JSON.stringify(filteredArray));
+        document.querySelector("tbody").innerHTML="";
+        displayData(filteredArray);
+    }
+
+    //logic for salary sort
+    function handlesalarySort(){
+        let selectedValue=document.querySelector("#sortSalary").value;
+        if(selectedValue==="HTL"){
+            jobarr.sort(function(a,b){
+                return b.personsalary - a.personsalary;
+            });
+            displayData(jobarr);
+        }
+        else if(selectedValue==="LTH"){
+            jobarr.sort(function(a,b){
+                return a.personsalary - b.personsalary;
+            });
+            displayData(jobarr);
+        }
+    }
+
+    //sorting names
+    function handlenameSort(){
+        let selectedValue=document.querySelector("#sortNames").value;
+        if(selectedValue==="asc"){
+            jobarr.sort(function(a,b){
+                // return a.personname - b.personname;
+                x=a.personname;
+                y=b.personname;
+
+                if(x>y){
+                    return 1; 
+                }
+                if(x<y){
+                    return -1;
+                }
+                return 0;
+            });
+            displayData(jobarr);
+        }
+        else if(selectedValue==="dsc"){
+            jobarr.sort(function(a,b){
+               // return b.personname - a.personname;
+               x=a.personname;
+                y=b.personname;
+
+                if(x>y){
+                    return -1; 
+                }
+                if(x<y){
+                    return 1;
+                }
+                return 0;
+            });
+            displayData(jobarr);
+        }
+    }
+    function displayData(data){
+        document.querySelector("tbody").innerHTML="";
+        data.forEach(function(element){
+            let tr=document.createElement("tr");
+
+            let td1=document.createElement("td");
+            td1.innerText=element.personname;
+
+            let td2=document.createElement("td");
+            td2.innerText=element.personemail;
+
+            let td3=document.createElement("td");
+            td3.innerText=element.personrole;
+
+            let td4=document.createElement("td");
+            td4.innerText=element.personsalary;
+
+            let td5=document.createElement("td");
+            td5.innerText="Bookmark";
+            td5.style.cursor="pointer";
+            td5.addEventListener("click",function(){
+              bookmarkfunction(element);
+            });
+            tr.append(td1,td2,td3,td4,td5);
+            document.querySelector("tbody").append(tr);
+        })   
+    }
+</script>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+        }
+        #navbar{
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid black;
+            padding: 20px;
+            color: white;
+            background-color: #1c2938;
+            border-radius: 20px;
+            margin: 8px;
+        }
+        #navfirst{
+            flex: 1;
+        }
+        #navsecond{
+            display: flex;
+            justify-content: flex-end;
+            gap:40px;
+            align-items: center;
+        }
+        #navsecond a{
+            color: white;
+        }
+        #form{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="navfirst">
+            <p>Reebok</p>
+        </div>        
+        <div id="navsecond">
+            <a href="./index.html">Index</a>
+            <a href="./men.html">Men</a>
+            <a href="./women.html">Women</a>
+            <a href="./login.html">Login</a>
+            <a href="./signup.html">Sign up</a>
+            <a href="./logout.html">Logout</a>
+        </div>
+    </nav>
+    <h1>This is login page</h1>
+    <form id="form">
+        <h2>Please login with your credentials</h2>
+        <label>Username:</label>
+        <input id="username" type="text"/></br></br>
+        <label>Password:</label>
+        <input id="password" type="password"/></br></br>
+        <button id="login" type="submit">Login</button>
+    </form>
+</body>
+</html> 
+<script>
+    document.querySelector("#login").addEventListener("click",login);
+    function login(event){
+        event.preventDefault();
+        let givenUsername=document.querySelector("#username").value;
+        let givenPassword=document.querySelector("#password").value;
+        if(localStorage.getItem("signuplist")!=null){
+           let signedUpDetails=JSON.parse(localStorage.getItem("signuplist"));
+           let user = signedUpDetails.find(user => user.username === givenUsername);
+           console.log(user);
+           if(user){
+                if(givenPassword===user.password){
+                    localStorage.setItem("loggedIn","true");
+                    alert("you are logged in");
+                }else{
+                    alert("Incorrect password");
+                }
+           }
+           else{
+            alert("Username not found");
+           }
+            
+        }
+    }
+</script>

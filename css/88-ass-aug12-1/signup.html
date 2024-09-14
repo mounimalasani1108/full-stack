@@ -1,0 +1,157 @@
+<!-- chatgpt code (only html and css)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f0f0f0;
+        }
+        #navbar{
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid black;
+            padding: 20px;
+            color: white;
+            background-color: #1c2938;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+            margin-top: 80px;
+        }
+        #navfirst{
+            flex: 1;
+        }
+        #navsecond{
+            display: flex;
+            justify-content: flex-end;
+            gap: 40px;
+            align-items: center;
+        }
+        #navsecond a{
+            color: white;
+            text-decoration: none;
+        }
+        #form {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        #form h2 {
+            margin-bottom: 20px;
+        }
+        #form label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        #form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        #form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1c2938;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #form button:hover {
+            background-color: #2e4055;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="navfirst">
+            <p>Reebok</p>
+        </div>        
+        <div id="navsecond">
+            <a href="./index.html">Index</a>
+            <a href="./men.html">Men</a>
+            <a href="./women.html">Women</a>
+            <a href="./login.html">Login</a>
+            <a href="./signup.html">Sign up</a>
+            <a href="./logout.html">Logout</a>
+        </div>
+    </nav>
+
+    <form id="form">
+        <h2>Please sign up if you are a new user</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"/>
+
+        <label for="dob">Date Of Birth:</label>
+        <input type="date" id="dob" name="dob"/>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"/>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"/>
+
+        <label for="repassword">Re-enter Password:</label>
+        <input type="password" id="repassword" name="repassword"/>
+
+        <button id="signup" type="submit">Sign Up</button>
+    </form>
+</body>
+</html> 
+<script>
+    document.querySelector("#signup").addEventListener("click",submitSignUpDetails);
+    let signup;
+    if(localStorage.getItem("signuplist")!=null){
+        signup=JSON.parse(localStorage.getItem("signuplist"));
+    }
+    else{
+        signup=[];
+    }
+    function submitSignUpDetails(event){
+        event.preventDefault();
+
+        //verifying password
+        let password=document.querySelector("#password").value;
+        let repassword=document.querySelector("#repassword").value;
+
+        if(password===repassword){
+            signupObj={
+                name:document.querySelector("#name").value,
+                dob:document.querySelector("#dob").value,
+                username:document.querySelector("#username").value,
+                password:document.querySelector("#password").value,
+                repassword:document.querySelector("#repassword").value
+            }
+            signup.push(signupObj);
+            console.log(signup);
+            localStorage.setItem("signuplist",JSON.stringify(signup));
+
+            //reseting the form
+            document.querySelector("#form").reset();
+            alert("Sign up successful");
+        }
+        else{
+            alert("please give the same value for password and re enter password!");
+            document.querySelector("#form").reset();
+        }
+    }
+</script>
+

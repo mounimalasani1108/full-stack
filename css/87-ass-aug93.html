@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            margin: 10px;
+            text-align: center;
+        }
+        #cards-section{
+            display: grid;
+            grid-template-columns: repeat(5,250px);
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <select id="category">
+            <option value="">Select category</option>
+            <option value="electronics">electronics</option>
+            <option value="furniture">furniture</option>
+            <option value="home appliances">home appliances</option>
+            <option value="books">books</option>
+        </select>
+        <input id="title" type="text" placeholder="product title"/>
+        <input id="desc" type="text" placeholder="product description"/>
+        <input id="price" type="text" placeholder="product price"/>
+        <input id="submit" type="submit"/>
+    </form>
+    <br/>
+    Filter by category:
+        <select id="filterCategory" onchange="handlecategory()">
+            <option value="">select</option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+            <option value="homeappliances">Home appliances</option>
+            <option value="books">Books</option>
+        </select>
+    <div id="cards-section">
+    </div>
+</body>
+<script>
+    document.querySelector("#form").addEventListener("submit", cardsubmit);
+    let cardsarr=[];
+    if(localStorage.getItem("cardslist")!==null){
+        cardsarr=JSON.parse(localStorage.getItem("cardslist"));
+    }
+    
+    // to load the cards when the page loads
+    window.onload=function(){
+        cardsarr.forEach(card => addcard(card));
+    }
+
+    function cardsubmit(){
+        event.preventDefault();
+        let cardobj={
+            id:Date.now(),
+            categoryname:document.querySelector("#category").value,
+            producttitle:document.querySelector("#title").value,
+            productdescription:document.querySelector("#desc").value,
+            productprice:document.querySelector("#price").value
+        };
+        console.log(cardobj);
+        cardsarr.push(cardobj);
+        localStorage.setItem("cardslist",JSON.stringify(cardsarr));
+        addcard(cardobj);
+
+        //reseting the values
+        document.querySelector("#form").reset();
+    }
+
+    // document.querySelector("#submit").addEventListener("click", addcard);
+    function addcard(cardobj){
+        let card=document.createElement("div");
+        card.id='card-${cardobj.id}';
+        card.className="card";
+        let h2tag=document.createElement("h2");
+        h2tag.innerText= cardobj.categoryname;
+
+        let para1=document.createElement("p")
+        para1.innerText=cardobj.producttitle;
+
+        let para2=document.createElement("p")
+        para2.innerText=cardobj.productdescription;
+
+        let para3=document.createElement("p")
+        para3.innerText=cardobj.productprice;
+
+        let btn1=document.createElement("button");
+        btn1.innerText="delete";
+
+        btn1.addEventListener("click",function(){
+          document.getElementById('card-${cardobj.id}').remove();//deleting card from DOM - added unique identifier for card 
+          deleteCard(cardobj.id);
+        });
+        
+
+        card.append(h2tag,para1,para2,para3,btn1);
+        document.querySelector("#cards-section").append(card);
+
+    }
+
+    function deleteCard(id){
+        cardsarr=cardsarr.filter(card=>card.id!==id);
+        localStorage.setItem("cardslist",JSON.stringify(cardsarr));
+    }
+    function handlecategory(){
+        let selectedValue=document.querySelector("#filterCategory").value;
+        let filteredArray=cardsarr.filter(function(element){
+            return element.categoryname == selectedValue|| selectedValue==''; //to show all cards when there is no filter
+        });
+        console.log(filteredArray);
+        document.querySelector("#cards-section").innerText="";
+        filteredArray.forEach(card=>addcard(card));
+    }
+</script>

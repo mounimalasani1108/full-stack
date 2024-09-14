@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+        }
+        #navbar{
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid black;
+            padding: 20px;
+            color: white;
+            background-color: #1c2938;
+            border-radius: 20px;
+            margin: 8px;
+        }
+        #navfirst{
+            flex: 1;
+        }
+        #navsecond{
+            display: flex;
+            justify-content: flex-end;
+            gap:40px;
+            align-items: center;
+        }
+        #navsecond a{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="navfirst">
+            <p>Reebok</p>
+        </div>        
+        <div id="navsecond">
+            <a href="./index.html">Index</a>
+            <a href="./men.html">Men</a>
+            <a href="./women.html">Women</a>
+            <a href="./login.html">Login</a>
+            <a href="./signup.html">Sign up</a>
+            <a href="./logout.html">Logout</a>
+        </div>
+    </nav>
+    <h1>This is logout page</h1>
+    <button id="logout">Log out</button>
+</body>
+</html> 
+<script>
+    document.querySelector("#logout").addEventListener("click", function() {
+        if(localStorage.getItem("loggedIn")==="true"){
+            localStorage.setItem("loggedIn","false");
+            alert("You have been logged out");
+            window.location.href = "./login.html"; // Redirect to login page
+        }
+        else{
+            alert("u are not logged in");
+        }
+    });
+</script>
