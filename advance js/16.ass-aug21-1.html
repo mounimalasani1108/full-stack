@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        #container p{
+            font-size: 20px;
+        }
+        div img{
+            height: 200px;
+            width: 200px;
+        }
+        div{
+            border: 1px solid black;
+            height: 400px;
+            margin-bottom: 10px;
+            width:400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+    async function dataFetching(){
+        try{
+            let response = await fetch(" https://restcountries.com/v3.1/all");
+            let data=await response.json();
+            console.log(data);
+
+            //dom
+            let container=document.querySelector("#container");
+            data.map(function(element){
+                let div=document.createElement("div");
+                // div.style.border = '1px solid black';
+                // div.style.height = '400px';
+                // div.style.marginBottom = '10px';
+                // div.style.width = '400px';
+
+                let h3tag=document.createElement("h3");
+                h3tag.innerText=element.name.common;
+
+                let im=document.createElement("img");
+                im.src=element.flags.png;
+
+                let ptag=document.createElement("p");
+                ptag.innerText=element.population;
+
+                let ptag1=document.createElement("p");
+                ptag1.innerText=element.region;
+
+                let ptag2=document.createElement("p");
+                ptag2.innerText=element.capital;
+                
+                div.append(h3tag, im, ptag, ptag1, ptag2);
+                container.append(div);
+            });
+            console.log(response);
+        } catch(error){
+            alert(error);
+            console.log(error);
+        }
+    } 
+    dataFetching();
+</script>

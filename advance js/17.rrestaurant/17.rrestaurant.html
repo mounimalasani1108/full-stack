@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./17.rrestaurant.css"/>
+</head>
+<body>
+    <div id="app">
+        <div id="tables-section">
+            <h2>Table</h2>
+            <input type="text" id="table-search" placeholder="search by table" onchange="filterTable()"/>
+        </div>
+        <div id="menu-section">
+            <h2>Menu</h2>
+            <input type="text" id="table-search" placeholder="search by menu" onchange="filterMenu()"/>
+        </div>
+    </div>
+    <!-- modal section for order details -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content"></div>
+        <span>&times;</span>
+    </div>
+</body>
+</html>
+<script src="./17.rrestaurant.js"></script>

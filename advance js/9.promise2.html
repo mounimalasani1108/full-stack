@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hi
+</body>
+</html>
+<script>
+    let coin=0;
+    let cart=new Promise((resolve, reject)=>{
+        setTimeout(function (){
+            if(coin==1){
+                resolve(coin);//result coin
+                //if there is any data from server, it will go to resolve(data)
+            }
+            else{
+                reject("cart issue");//error cart issue
+                //if there is any error from server it will go to reject(error)
+            }
+        },5000);
+    });
+
+    cart
+    .then(function(result){
+        console.log(result);
+    })
+    .catch(function(error){
+        console.log(error);
+    });
+</script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let p1=new Promise((resolve,reject)=>{
+        reject("this promise is reject");
+    });
+    p1.then().catch((reject)=>{
+        console.log("this is rejected");    
+    }).finally(function(){
+        console.log("promise handling completed");
+    });
+</script>

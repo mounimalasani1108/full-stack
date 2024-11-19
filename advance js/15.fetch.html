@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+    async function dataFetching(){
+        try{
+            let response = await fetch("https://fakestoreapi.com/products");
+            let data=await response.json();
+            console.log(data);
+
+            //dom
+            let container=document.querySelector("#container");
+            data.map(function(element){
+                let div=document.createElement("div");
+                let p=document.createElement("p");
+                p.innerText=element.title;
+                let im=document.createElement("img");
+                im.src=element.image;
+                div.append(p,im);
+                container.append(div);
+            });
+            console.log(response);
+        } catch(error){
+            alert(error);
+            console.log(error);
+        }
+    } 
+    dataFetching();
+</script>
+
+/* #app{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+} */
